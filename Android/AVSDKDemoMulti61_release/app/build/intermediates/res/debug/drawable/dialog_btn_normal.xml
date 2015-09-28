@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <solid android:color="@color/white" />
+            <corners android:radius="10dp" />
+        </shape>
+    </item>
+</layer-list><!-- From: file:/D:/show/trunk/client/Android/QAVSDKDemoMulti612/app/src/main/res/drawable/dialog_btn_normal.xml -->

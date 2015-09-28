@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="D:\show\trunk\client\Android\QAVSDKDemoMulti61\app\libs\httpmime-4.1.1.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="d34b163e52a9727101aced60775d51c5085390a1">
+        <dex dex="D:\show\trunk\client\Android\QAVSDKDemoMulti61\app\build\intermediates\pre-dexed\debug\httpmime-4.1.1-4b00917f42f31ce180469dd48aec29f028b7698f.jar" />
+    </item>
+    <item
+        jar="D:\show\trunk\client\Android\QAVSDKDemoMulti61\app\libs\eup_1.9.2__allproguad_rqdp.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="dc2a82e6063ab032c96bacc96b0bd8dc929da9ab">
+        <dex dex="D:\show\trunk\client\Android\QAVSDKDemoMulti61\app\build\intermediates\pre-dexed\debug\eup_1.9.2__allproguad_rqdp-bdae15aa7d1d4fc28e358a439af78e18f55b7750.jar" />
+    </item>
+    <item
+        jar="D:\show\trunk\client\Android\QAVSDKDemoMulti61\app\libs\mobilepb.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="a5e62566e5023a4497edcb883324e82771c8c9fb">
+        <dex dex="D:\show\trunk\client\Android\QAVSDKDemoMulti61\app\build\intermediates\pre-dexed\debug\mobilepb-337a698fca0ba783e284b817bbe4468043510551.jar" />
+    </item>
+    <item
+        jar="D:\show\trunk\client\Android\QAVSDKDemoMulti61\app\libs\bugly_1.2.2.1_imsdk_release.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="863ccf6ba330007578e04f15e00ae6c5e18b5c35">
+        <dex dex="D:\show\trunk\client\Android\QAVSDKDemoMulti61\app\build\intermediates\pre-dexed\debug\bugly_1.2.2.1_imsdk_release-5122b51037c4e5c7450327d0733c38b7116d09e4.jar" />
+    </item>
+    <item
+        jar="D:\show\trunk\client\Android\QAVSDKDemoMulti61\app\libs\qavsdk.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="e32f79a87fad61670aac45de1d47cd17b02f8e3e">
+        <dex dex="D:\show\trunk\client\Android\QAVSDKDemoMulti61\app\build\intermediates\pre-dexed\debug\qavsdk-74ea7f5c2b804857cb8585d61e65ee2a3471003a.jar" />
+    </item>
+    <item
+        jar="D:\show\trunk\client\Android\QAVSDKDemoMulti61\app\libs\wup-1.0.0-SNAPSHOT.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="dd8fa9304e376adaf936c3db097240d2efcb116f">
+        <dex dex="D:\show\trunk\client\Android\QAVSDKDemoMulti61\app\build\intermediates\pre-dexed\debug\wup-1.0.0-SNAPSHOT-26aaabbc4405c3595793fe0e1f20ee1b40e7859c.jar" />
+    </item>
+    <item
+        jar="D:\show\trunk\client\Android\QAVSDKDemoMulti61\app\libs\universal-image-loader-1.9.4.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="dd9eeb557650c4ad7394df23f0f5cf27a7cfc697">
+        <dex dex="D:\show\trunk\client\Android\QAVSDKDemoMulti61\app\build\intermediates\pre-dexed\debug\universal-image-loader-1.9.4-6350950621985338e20300a42f7f5cb36c4bd581.jar" />
+    </item>
+    <item
+        jar="D:\show\trunk\client\Android\QAVSDKDemoMulti61\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="c95ba8152923e4872e86a82cfcba9a51c0214328">
+        <dex dex="D:\show\trunk\client\Android\QAVSDKDemoMulti61\app\build\intermediates\pre-dexed\debug\classes-074e7f4ef73d6c8ec1a541e6b33f8395b8aed8d4.jar" />
+    </item>
+    <item
+        jar="D:\show\trunk\client\Android\QAVSDKDemoMulti61\app\libs\imsdk.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="c38654c9252565df6de0d206c055c68b788e1750">
+        <dex dex="D:\show\trunk\client\Android\QAVSDKDemoMulti61\app\build\intermediates\pre-dexed\debug\imsdk-5e3f39100cc4c52b17c74c9878b51bf3db63f955.jar" />
+    </item>
+    <item
+        jar="D:\android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.1.1\support-annotations-22.1.1.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="01d051a6bfb1218b1db2d3a5af0480ac2c25c42a">
+        <dex dex="D:\show\trunk\client\Android\QAVSDKDemoMulti61\app\build\intermediates\pre-dexed\debug\support-annotations-22.1.1-0fe028d791c9a45999429bcba79018542da991b4.jar" />
+    </item>
+    <item
+        jar="D:\show\trunk\client\Android\QAVSDKDemoMulti61\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\jars\libs\internal_impl-22.1.1.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="9e070ad32b2700b0343e8e0cccc437733d91ba3a">
+        <dex dex="D:\show\trunk\client\Android\QAVSDKDemoMulti61\app\build\intermediates\pre-dexed\debug\internal_impl-22.1.1-af9b8833343f1354c8b6a130cfa2452af2b92c71.jar" />
+    </item>
+
+</items>

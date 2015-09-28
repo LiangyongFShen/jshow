@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150px"
+        android:layout_marginRight="150px"
+        android:layout_marginTop="600px"
+        >
+
+        <ImageView
+            android:id="@+id/account_bg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input_bg"
+            />
+
+       <ImageView
+           android:id="@+id/person"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:background="@drawable/person"
+           android:layout_marginTop="40px"
+           android:layout_marginLeft="87px"
+           />
+
+        <EditText
+            android:id="@+id/login_account"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/person"
+            android:layout_alignTop="@id/person"
+            android:layout_marginLeft="49px"
+            android:background="@null"
+            android:hint="请输入手机号"
+            android:inputType="phone"
+            android:maxLength="16"
+            android:maxLines="1"
+            android:text="12345678910"
+            android:textColor="#ffffff"
+            android:textSize="51px" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="81px"
+        android:layout_marginLeft="150px"
+        android:layout_marginRight="150px">
+        <ImageView
+            android:id="@+id/password_bg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input_bg"
+            />
+
+        <ImageView
+            android:id="@+id/password"
+            android:layout_width="60px"
+            android:layout_height="70px"
+            android:background="@drawable/password"
+            android:layout_marginTop="40px"
+            android:layout_marginLeft="100px"
+            />
+
+        <EditText
+            android:id="@+id/login_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/password"
+            android:layout_alignTop="@id/password"
+            android:layout_marginLeft="52px"
+            android:background="@null"
+            android:hint="请输入密码"
+            android:inputType="textPassword"
+            android:maxLength="16"
+            android:maxLines="1"
+            android:text="12345678910"
+            android:textColor="#ffffff"
+            android:textSize="51px" />
+
+        <LinearLayout
+            android:id="@+id/tls_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_toRightOf="@id/password"
+            android:layout_marginLeft="49px"
+            android:visibility="gone"
+            >
+            <EditText
+                android:id="@+id/login_smssig"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="请输入短信验证码"
+                android:maxLength="16"
+                android:maxLines="1"
+                android:textColor="#ffffff"
+                android:textSize="51px" />
+
+            <Button
+                android:id="@+id/smslogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3px"
+                android:layout_marginRight="5.0px"
+                android:layout_alignParentRight="true"
+                android:padding="5dp"
+                android:gravity="center_vertical"
+                android:background="@drawable/login_button_style"
+                android:text="获取验证码"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="fill_parent"
+        android:layout_height="160px"
+        android:layout_marginTop="81px"
+        android:layout_marginLeft="150px"
+        android:layout_marginRight="150px"
+        android:background="@drawable/login_button_style"
+        android:gravity="center"
+        android:text="登录"
+        android:textColor="@color/white"
+        android:textSize="51px" />
+
+    <TextView
+        android:id="@+id/login_tips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20px"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/red" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="right|center_vertical"
+        android:layout_marginTop="81px"
+        >
+
+        <RadioGroup
+            android:id="@+id/login_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+
+            <RadioButton
+                android:id="@+id/self_login_mode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:text="独立登录模式"
+                android:textSize="12.0sp"
+                android:textColor="@color/white"
+                android:checked="true"
+                android:onClick="onSingleMode"/>
+
+            <RadioButton
+                android:id="@+id/tls_login_mode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="托管登录模式"
+                android:textSize="12.0sp"
+                android:textColor="@color/white"
+                android:onClick="onTLSMode"
+                />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btn_env"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:layout_marginRight="10dp"
+            android:background="#bbbbbb"
+            android:onClick="onEnv"
+            android:padding="5dp"
+            android:text="测试环境"
+            android:textColor="@color/white"
+            android:textSize="12.0sp" />
+
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:layout_marginRight="10dp"
+            android:background="#bbbbbb"
+            android:onClick="onRegister"
+            android:padding="5dp"
+            android:text="注册"
+            android:textColor="@color/white"
+            android:textSize="12.0sp" />
+    </LinearLayout>
+
+
+</LinearLayout>
+
+<!-- From: file:/D:/show/trunk/client/Android/QAVSDKDemoMulti612/app/src/main/res/layout/login_activity.xml -->

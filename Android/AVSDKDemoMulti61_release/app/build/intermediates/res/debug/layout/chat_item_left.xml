@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingTop="15px">
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:id="@+id/tv_chatcontent"
+            android:layout_width="wrap_content"
+            android:layout_height="75px"
+            android:gravity="center_vertical"
+            android:background="@drawable/common_background"
+            android:layout_marginTop="13px"
+            android:layout_marginLeft="46px"
+            android:paddingLeft="60px"
+            android:paddingRight="13px"
+            android:maxWidth="250dp"
+            android:text="null"
+            android:textSize="42px"
+            />
+
+        <com.tencent.avsdk.CircularImageButton
+            android:id="@+id/tv_chat_head_image"
+            android:layout_width="93px"
+            android:layout_height="93px"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:focusable="false"
+            android:background="@drawable/userlogo"
+            />
+
+
+    </RelativeLayout>
+</LinearLayout>
+<!-- From: file:/D:/show/trunk/client/Android/QAVSDKDemoMulti612/app/src/main/res/layout/chat_item_left.xml -->

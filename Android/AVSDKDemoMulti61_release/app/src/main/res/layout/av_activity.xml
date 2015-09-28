@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/av_screen_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/av_video_layer_ui"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/qav_video_layer_ui" />
+
+    <TextView
+        android:id="@+id/qav_tips_msg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="60dp"
+        android:layout_marginLeft="5dp"
+        android:textSize="13sp"
+        android:singleLine="false"
+        android:maxLength="2000"
+        android:layout_alignParentLeft="true"
+        />
+    <Button
+        android:id="@+id/qav_topbar_streamtype"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/activity_top_label_height"
+        android:layout_marginTop="50dp"
+        android:padding="5dp"
+        android:background="@drawable/btn_av_press"
+        android:text="HLS"
+        android:layout_alignParentRight="true"
+        android:textSize="@dimen/text_size"
+        android:textColor="@color/whitesmoke"/>
+    <Button
+        android:id="@+id/qav_topbar_push"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/activity_top_label_height"
+        android:layout_marginRight="@dimen/margin"
+        android:layout_marginTop="50dp"
+        android:padding="5dp"
+        android:background="@drawable/btn_av_press"
+        android:text="推流"
+        android:textSize="@dimen/text_size"
+        android:layout_toLeftOf="@+id/qav_topbar_streamtype"
+        android:textColor="@color/whitesmoke"/>
+    <Button
+        android:id="@+id/qav_topbar_record"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/activity_top_label_height"
+        android:layout_marginRight="@dimen/margin"
+        android:layout_marginTop="50dp"
+        android:layout_toLeftOf="@+id/qav_topbar_push"
+        android:padding="5dp"
+        android:background="@drawable/btn_av_press"
+        android:text="录制"
+        android:textSize="@dimen/text_size"
+        android:textColor="@color/whitesmoke"/>
+    <TextView
+        android:id="@+id/qav_show_tips"
+        android:layout_width="50dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="100dp"
+        android:textSize="12sp"
+        android:singleLine="false"
+        android:background="@null"
+        android:layout_alignParentRight="true"
+        />
+
+    <include
+        android:id="@+id/qav_top_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        layout="@layout/qav_top_bar" />
+
+    <include
+        android:id="@+id/qav_bottom_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        layout="@layout/qav_bottom_bar" />
+</RelativeLayout>
