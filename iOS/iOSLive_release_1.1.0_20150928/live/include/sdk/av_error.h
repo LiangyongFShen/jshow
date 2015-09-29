@@ -1,0 +1,290 @@
+﻿#ifndef AV_ERROR_H_
+#define AV_ERROR_H_
+
+#include "basictypes.h"
+
+namespace tencent {
+namespace av {
+
+#define AV_ERROR(label, value) AV_ERR_##label = value,
+
+enum AVError {
+  AV_OK = 0,
+
+  // A generic failure occurred.
+  AV_ERR_FAILED = 1,
+
+  //APP/INFO SERVER 错误
+  AV_ERR_APP_SERVER_ERROR = 2,
+
+  // 房间数目达到上限，无法再创建
+  AV_ERR_SVR_ROOM_NUM_OUT_OF_RANGE = 6,
+
+  // 房间内的人数达到上限，无法再加入
+  AV_ERR_SVR_ROOM_MEMBER_NUM_OUT_OF_RANGE = 7,
+
+  // 签名超时
+  AV_ERR_SVR_KEY_EXPIRED = 8,
+
+  // 操作重复
+  AV_ERR_SVR_REPEATED_OPERATION = 9,
+
+  // 找不到房间
+  AV_ERR_SVR_ROOM_NOT_FOUND = 10,
+
+  // 找不到用户
+  AV_ERR_SVR_ENDPOINT_NOT_FOUND = 11,
+
+  // 签名无效
+  AV_ERR_SVR_KEY_INVALID = 12,
+
+  // 能力无效
+  AV_ERR_SVR_ABILITY_INVALID = 13,
+
+  // 没有权限
+  AV_ERR_SVR_PERMISSION_DENIED = 14,
+
+  // 成员列表不需要更新
+  AV_ERR_SVR_ENDPOINT_LIST_UPTODATE = 15,
+
+  // 群视频房间教育模式不对
+  AV_ERR_SVR_EDU_MODE_ERR = 16,
+
+  // 群语音、群视频被禁用，或者用户被禁言.
+  AV_ERR_ENTER_BAN = 115,
+
+  // 群视频抢座失败，因为群视频座位已满.
+  AV_ERR_ENTER_VIDEO_FULL = 116,
+
+  // Get interface server address failed
+  AV_ERR_INTERFACE_SERVER_NOT_EXIST = 117,
+
+  // A previous operation is already in progress
+  //AV_ERR_OPERATION_IN_PROGRESS = 118,
+
+  // Not a valid room
+  AV_ERR_INVALID_ROOM = 119,
+
+  // Server kicked out as another client connected.
+  AV_ERR_SERVER_KICK_OUT = 150,
+
+  // The connection closed.
+  AV_ERR_CONNECTION_CLOSED = 151,
+
+  AV_ERR_SERVER_REFUSED = 152,
+
+  //接口机错误(201 to 300)
+  AV_ERR_INT_SERVER_ERROR = 201,
+
+  //(301 to 400)
+
+
+  //基础共用相关(1301 to 1400)
+  // An asynchronous operation is not yet complete.  This usually does not
+  // indicate a fatal error.  Typically this error will be generated as a
+  // notification to wait for some external notification that the operation
+  // finally completed.
+  AV_ERR_PENDING = 1301,
+
+  // An operation is already in progress.
+  AV_ERR_BUSY = 1302,
+
+  // An object is already exists.
+  AV_ERR_ALREADY_EXISTS = 1303,
+
+  // An argument to the function is incorrect.
+  AV_ERR_INVALID_ARGUMENT = 1304,
+
+  // The handle or file descriptor is invalid.
+  AV_ERR_INVALID_HANDLE = 1305,
+
+  // An object cannot be found.
+  AV_ERR_NOT_FOUND = 1306,
+
+  // An operation timed out.
+  AV_ERR_TIMEOUT = 1307,
+
+  // The operation failed because of unimplemented functionality.
+  AV_ERR_NOT_IMPLEMENTED = 1308,
+
+  // There were not enough resources to complete the operation.
+  AV_ERR_INSUFFICIENT_RESOURCES = 1309,
+
+  // Memory allocation failed.
+  AV_ERR_OUT_OF_MEMORY = 1310,
+
+  // Operation not supported.
+  AV_ERR_NOT_SUPPORTED = 1311,
+
+  // A previous operation is already in progress
+  AV_ERR_REPEATED_OPERATION_IN_PROGRESS = 1312,
+
+  // 不在主线程中执行
+  AV_ERR_NOT_IN_MAIN_THREAD = 1313,
+
+  AV_ERR_NETWORK_ERROR = 1314,
+
+
+  //CONTEXT相关(1401 to 1500)
+  // The operation failed because of context not started.
+  AV_ERR_CONTEXT_CLOSED = 1401,
+  AV_ERR_CONTEXT_STARTED = 1402,
+  AV_ERR_CONTEXT_ALREADY_EXIST = 1404,
+  AV_ERR_CONTEXT_NOT_EXIST = 1405,
+
+  //房间相关(1501 to 1600)
+  // 自己的id
+  AV_ERR_SELF_ID = 1501,
+  AV_ERR_ROOM_TYPE_ERROR = 1502,
+  AV_ERR_INIT_ROOM_ERROR = 1503,
+  AV_ERR_ROOM_ALREADY_EXIST = 1504,
+  AV_ERR_ROOM_NOT_EXIST = 1505,
+  AV_ERR_ROOM_NOT_LEAVED = 1506,
+  AV_ERR_ROOM_NOT_INITED = 1507,
+  AV_ERR_CHANGE_AV_STATE_FAILED = 1508,
+
+  //设备相关(1601 to 1700)
+  // An error occured in device open.
+  AV_ERR_DEVICE_OPEN_FAILED = 1601,
+
+  // An error occured in device close.
+  AV_ERR_DEVICE_CLOSE_FAILED = 1602,
+
+  // 设备没有找到
+  AV_ERR_DEVICE_NOT_FOUND = 1603,
+
+  // 没有视频
+  AV_ERR_NOT_VIDEO = 1604,
+
+  // 设备操作重复
+  AV_ERR_REPEATED_DEVICE_OPERATION = 1605,
+
+  //设备初始化失败
+  AV_ERR_INIT_DEVICE_ERROR = 1606,
+
+  //设备已经处于所在状态，无需再操作；如设备已经打开，再次打开，就返回这个错误码
+  AV_ERR_DEVICE_HAS_IN_THE_STATE = 1607,
+
+  //设备没有初始化
+  AV_ERR_DEVICE_NOT_INITED = 1608,
+
+  //android渲染模块所需参数错误
+  AV_ERR_DEVICE_HOLDER_RENDER_PARAM_ERROR = 1609,
+
+  //外部视频捕获设备已经开启中，不能再开启摄像头。
+  AV_ERR_EXTERNAL_CAPTURE_ENABLED = 1901,
+
+  //摄像头设备已经开启中，不能再开启外部视频捕获设备。
+  AV_ERR_CAMERA_ENABLED = 1902,
+
+
+  //成员相关(1701 to 1800)
+  // 设备成员操作重复
+  AV_ERR_REPEATED_ENDPOINT_OPERATION = 1701,
+  //成员没找到
+  AV_ERR_ENDPOINT_NOT_FOUND = 1702,
+  //成员操作失败
+  AV_ERR_ENDPOINT_OPERATION_FAILED = 1703,
+
+  //成员ID为空
+  AV_ERR_ENDPOINT_IDENTIFER_IS_NULL = 1704,
+  //成员Tiny ID为空
+  AV_ERR_ENDPOINT_TINY_ID_IS_NULL = 1705,
+
+  //邀请模块(1801 to 1900)。注意：邀请模块只是用于DEMO演示方便用，对外暂不支持邀请功能，所以业务侧不需要处理这些错误码。
+  //发送邀请失败
+  AV_ERR_INVITE_FAILED = 1801,
+  //接受邀请失败
+  AV_ERR_ACCEPT_FAILED = 1802,
+  //拒绝邀请失败
+  AV_ERR_REFUSE_FAILED = 1803,
+  
+  //其他错误
+  //android JNI接口相关错误
+  AV_ERR_JNI_ERROR = 2001,
+
+  //IMSDK内部错误
+  /*
+  ERR_SUCC = 0,
+  ERR_PARSE_RESPONSE_FAILED            = 6001,
+  ERR_SERIALIZE_REQ_FAILED             = 6002,
+  ERR_NO_SUCC_RESULT                   = 6003,
+  ERR_INVALID_CONVERSATION             = 6004,
+  ERR_LOADMSG_FAILED                   = 6005,
+  ERR_FILE_TRANS_AUTH_FAILED           = 6006,
+  ERR_FILE_TRANS_NO_SERVER             = 6007,
+  ERR_FILE_TRANS_UPLOAD_FAILED         = 6008,
+  ERR_FILE_TRANS_DOWNLOAD_FAILED       = 6009,
+  ERR_HTTP_REQ_FAILED                  = 6010,
+  ERR_TO_USER_INVALID                  = 6011,
+  ERR_REQUEST_TIMEOUT                  = 6012,
+  ERR_SDK_NOT_INITIALIZED              = 6013,
+  ERR_SDK_NOT_LOGGED_IN                = 6014,
+  ERR_IN_PROGESS                       = 6015,
+  */
+
+  //使用IMSDK所提供网络通道的相关错误
+  AV_ERR_TINYID_TO_OPENID_FAILED = 6101,
+  AV_ERR_OPENID_TO_TINYID_FAILED = 6102,
+
+  AV_ERROR(CALLBACK_OK,    0x10000)
+  AV_ERROR(CALLBACK_FAIL,   0x10001)
+  AV_ERROR(CALLBACK_TIMEOUT,   0x10002)
+
+  AV_ERROR(APP_PAIR_CS_RET_OK,       0x20000)
+  AV_ERROR(APP_PAIR_CS_RET_INTERNAL_UNKNOWN_ERROR,  0x20001)
+  AV_ERROR(APP_PAIR_CS_RET_TIMEOUT  ,    0x20002)
+  AV_ERROR(APP_PAIR_CS_RET_CREATE_ROOM_ERROR ,   0x20003)
+  AV_ERROR(APP_PAIR_CS_RET_INVALID_ID   ,  0x20004)
+  AV_ERROR(APP_PAIR_CS_RET_INVALID_ROOM_ID,  0x20005)
+  AV_ERROR(APP_PAIR_CS_RET_ID_NOT_IN_ROOM,  0x20006)
+  AV_ERROR(APP_PAIR_CS_RET_CHECK_PRIVILEGE_FAIL , 0x20007)
+  AV_ERROR(APP_PAIR_CS_RET_CONVERT_MOBILE_TO_ID_FAIL,  0x20008)
+  AV_ERROR(APP_PAIR_CS_RET_TEMP_SESSION_SHIELDED , 0x20009)
+  AV_ERROR(APP_PAIR_CS_RET_SECURITY_SHIELDED,  0x2000A)
+
+  AV_ERROR(APP_MULTI_CS_RET_OK    ,  0x30000)
+  AV_ERROR(APP_MULTI_CS_RET_INVALID_SIGN   ,       0x30001)
+  AV_ERROR(APP_MULTI_CS_RET_INVALID_TLV_TYPE  ,    0x30002)
+  AV_ERROR(APP_MULTI_CS_RET_CHECK_GROUP_FAILED  ,  0x30003)
+  AV_ERROR(APP_MULTI_CS_RET_ID_IN_BLACK_LIST  ,   0x30004)
+  AV_ERROR(APP_MULTI_CS_RET_ALLOC_CONN_SERVER_ERROR , 0x30005)
+  AV_ERROR(APP_MULTI_CS_RET_IP_IN_BLOCK_AREA  , 0x30006)
+  AV_ERROR(APP_MULTI_CS_RET_GROUP_VIDEO_DISABLED , 0x30007)
+  AV_ERROR(APP_MULTI_CS_RET_GROUP_VIDEO_CLOSED,  0x30008)
+  AV_ERROR(APP_MULTI_CS_RET_INVALID_TICKET , 0x30009)
+  AV_ERROR(APP_MULTI_CS_RET_INVALID_DIAL_NUMBER , 0x3000A)
+  AV_ERROR(APP_MULTI_CS_RET_ADD_ID_TO_DISCUSS_ERROR,  0x3000B)
+  AV_ERROR(APP_MULTI_CS_RET_DISCUSS_FULL , 0x3000C)
+  AV_ERROR(APP_MULTI_CS_RET_DISCUSS_NOT_EXIST,  0x3000D)
+  AV_ERROR(APP_MULTI_CS_RET_INVALID_ID  , 0x3000E)
+  AV_ERROR(APP_MULTI_CS_RET_VISITOR_OPEN_FORBIDDEN,  0x3000F)
+  AV_ERROR(APP_MULTI_CS_RET_OPEN_CONFLICT , 0x30010)
+  AV_ERROR(APP_MULTI_CS_RET_ERROR_ID_C2C , 0x30011)
+  AV_ERROR(APP_MULTI_CS_RET_C2C_NOT_FRIEND , 0x30012)
+  AV_ERROR(APP_MULTI_CS_RET_CLIENT_NOT_SUPPORT_EDU,  0x30013)
+  AV_ERROR(APP_MULTI_CS_RET_GROUP_VIDEO_MODE_ERROR , 0x30014)
+  AV_ERROR(APP_MULTI_CS_RET_CLIENT_NOT_SUPPORT_H264 , 0x30015)
+  AV_ERROR(APP_MULTI_CS_RET_SECURITY_NO_PASS , 0x30016)
+  AV_ERROR(APP_MULTI_CS_RET_CHECK_COURSE_IF_FAIL,  0x30017)
+  AV_ERROR(APP_MULTI_CS_RET_CLIENT_NOT_SUPPORT_CONFERENCE , 0x30018)
+  AV_ERROR(APP_MULTI_CS_RET_NO_COURSE_ID  , 0x30019)
+
+  AV_ERROR(INTER_MULTI_CS_RET_OK  ,    0x40000)
+  AV_ERROR(INTER_MULTI_CS_RET_SERVER_ERROR , 0x40001)
+  AV_ERROR(INTER_MULTI_CS_RET_UNABLE_TO_CREATE_ROOM , 0x40006)
+  AV_ERROR(INTER_MULTI_CS_RET_UNABLE_TO_JOIN_ROOM,  0x40007)
+  AV_ERROR(INTER_MULTI_CS_RET_SIGN_EXPIRED  , 0x40008)
+  AV_ERROR(INTER_MULTI_CS_RET_REPEAT_OPERATION  , 0x40009)
+  AV_ERROR(INTER_MULTI_CS_RET_ROOM_NOT_FOUND,  0x4000A)
+  AV_ERROR(INTER_MULTI_CS_RET_USER_NOT_FOUND,  0x4000B)
+  AV_ERROR(INTER_MULTI_CS_RET_INVALID_SIGN  ,  0x4000C)
+  AV_ERROR(INTER_MULTI_CS_RET_INVALID_ABILITY , 0x4000D)
+  AV_ERROR(INTER_MULTI_CS_RET_NO_PERMISSION,   0x4000E)
+  AV_ERROR(INTER_MULTI_CS_RET_USER_NO_UPDATE  , 0x4000F)
+};
+
+} // namespace av
+} // namespace tencent
+
+#endif // #ifndef AV_ERROR_H_

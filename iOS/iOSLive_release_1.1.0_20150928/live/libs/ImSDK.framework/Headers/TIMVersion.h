@@ -1,0 +1,4 @@
+#ifndef IMSDK_VERSION_H
+#define IMSDK_VERSION_H
+#define IMSDK_VERSION 1679
+#endif
